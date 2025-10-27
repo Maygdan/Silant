@@ -1,0 +1,19 @@
+
+
+import django.db.models.deletion
+from django.db import migrations, models
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ('silant_service', '0002_alter_referenceitem_options'),
+    ]
+
+    operations = [
+        migrations.AlterField(
+            model_name='complaint',
+            name='recovery_method',
+            field=models.ForeignKey(limit_choices_to={'type': 'recovery_method'}, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='recovery_methods', to='silant_service.referenceitem', verbose_name='Способ восстановления'),
+        ),
+    ]
